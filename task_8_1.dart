@@ -2,6 +2,7 @@ void main(List<String> args) {
    task_8_1();
    task_8_2();
    task_8_3();
+   task_8_4();
 }
 
 void task_8_1() {
@@ -59,4 +60,38 @@ void task_8_3() {
     }
   }
   print('Команда: $maxLengthKey - має найбільший опис: $maxLengthCommand');
+}
+
+void task_8_4() {
+ 
+  var listName = ['Саня','Льоха', 'Настя', 'Настя', 'Андрій', 'Андрій', 'Андрій', 'Аня',
+                  'Антон', 'Артем', 'Артур', 'Борис', 'Костя', 'Даніель', 'Діма',
+                  'Діма', 'Діма', 'Влад', 'Ігор', 'Іван', 'Карина', 'Віталій', 
+                  'Макс', 'Матвій', 'Олег', 'Саня', 'Льоха', 'Паша', 'Паша', 'Паша',
+                  'Паша', 'Ренат', 'Рост', 'Саня', 'Стас', 'Таня', 'Таня',
+                  'Вадим', 'Віталій', 'Влад', 'Ярік', 'Юра', 'Юра', 'Андрій', 'Бодя',
+                  'Галя', 'Жека', 'Жека', 'Ігор'];
+
+  var mapName = Map<String, int>();
+  for (var name in listName){
+    if (mapName.containsKey(name.toString())) {
+      mapName.update(name, (val) => val + 1);
+
+    } else {
+      mapName.addAll({name: 1});
+    }
+  } 
+  
+  mapName.forEach((key, value) {
+    if (value == 1) {
+      print('$key $value');
+    };  
+  }); 
+
+  mapName.forEach((key, value) {
+    if (value > 1) {
+      print('$key - $value');
+    };  
+  });
+  
 }
