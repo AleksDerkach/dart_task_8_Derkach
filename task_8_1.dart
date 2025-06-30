@@ -1,6 +1,7 @@
 void main(List<String> args) {
    task_8_1();
    task_8_2();
+   task_8_3();
 }
 
 void task_8_1() {
@@ -31,4 +32,31 @@ void task_8_2() {
       print(typeIn);
     } 
   }
+}
+
+void task_8_3() {
+ 
+  var mapCommand = {'add': 'додає значення в List',
+              'insert': 'поміщає у вказану позицію в List',
+              'remove': 'видаляє перший знайдений елемент в List'
+              };
+   mapCommand.addAll({'clear': 'очищає List'});
+   mapCommand['add'] = 'розширює List додавши значення останнім в список';
+    
+  List keys = mapCommand.keys.toList();
+  String maxLengthCommand = '';
+  String maxLengthKey = '';
+  for (var i=0; i<mapCommand.length-1; i++) {
+    String key = keys[i];
+    String value = mapCommand[keys[i]].toString();
+    print('key: $key; value: $value');
+    for (var y=i; y==i; y++) {
+      print('key: $key; value: $value');
+    }
+    if (maxLengthCommand.length < value.length) {
+      maxLengthCommand = value;
+      maxLengthKey = key;
+    }
+  }
+  print('Команда: $maxLengthKey - має найбільший опис: $maxLengthCommand');
 }
