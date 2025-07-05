@@ -1,23 +1,23 @@
 void main(List<String> args) {
-   task_8_1();
-   task_8_2();
-   task_8_3();
-   task_8_4();
+   task8part1();
+   task8part2();
+   task8part3();
+   task8part4();
 }
 
-void task_8_1() {
+void task8part1() {
  
   var list = ['Pascal', 'C++', 'Assembler', 'Delphi', '1C'];
   print(list);
-  list.add("Flutter");
+  list.add('Flutter');
   print(list);
   list.removeAt(4);
   print(list);
 }
 
-void task_8_2() {
+void task8part2() {
  
-  var setTypeKnown = {'int', 'double', 'String', 'bool', 
+  final setTypeKnown = {'int', 'double', 'String', 'bool', 
                     'List', 'Set', 'Map', 'Null'};
     
   var setTypeCore = setTypeKnown.map((t) => (t)).toSet();
@@ -35,7 +35,7 @@ void task_8_2() {
   }
 }
 
-void task_8_3() {
+void task8part3() {
  
   var mapCommand = {'add': 'додає значення в List',
               'insert': 'поміщає у вказану позицію в List',
@@ -44,7 +44,7 @@ void task_8_3() {
    mapCommand.addAll({'clear': 'очищає List'});
    mapCommand['add'] = 'розширює List додавши значення останнім в список';
     
-  List keys = mapCommand.keys.toList();
+  final keys = mapCommand.keys.toList();
   String maxLengthCommand = '';
   String maxLengthKey = '';
   for (var i=0; i<mapCommand.length-1; i++) {
@@ -62,9 +62,9 @@ void task_8_3() {
   print('Команда: $maxLengthKey - має найбільший опис: $maxLengthCommand');
 }
 
-void task_8_4() {
+void task8part4() {
  
-  var listName = ['Саня','Льоха', 'Настя', 'Настя', 'Андрій', 'Андрій', 'Андрій', 'Аня',
+  final listName = ['Саня','Льоха', 'Настя', 'Настя', 'Андрій', 'Андрій', 'Андрій', 'Аня',
                   'Антон', 'Артем', 'Артур', 'Борис', 'Костя', 'Даніель', 'Діма',
                   'Діма', 'Діма', 'Влад', 'Ігор', 'Іван', 'Карина', 'Віталій', 
                   'Макс', 'Матвій', 'Олег', 'Саня', 'Льоха', 'Паша', 'Паша', 'Паша',
@@ -72,9 +72,9 @@ void task_8_4() {
                   'Вадим', 'Віталій', 'Влад', 'Ярік', 'Юра', 'Юра', 'Андрій', 'Бодя',
                   'Галя', 'Жека', 'Жека', 'Ігор'];
 
-  var mapName = Map<String, int>();
+  final mapName = Map<String, int>();
   for (var name in listName){
-    if (mapName.containsKey(name.toString())) {
+    if (mapName.containsKey(name)) {
       mapName.update(name, (val) => val + 1);
 
     } else {
