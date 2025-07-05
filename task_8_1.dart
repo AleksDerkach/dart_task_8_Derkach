@@ -1,8 +1,8 @@
 void main(List<String> args) {
-   task8part1();
-   task8part2();
+   //task8part1();
+   //task8part2();
    task8part3();
-   task8part4();
+   //task8part4();
 }
 
 void task8part1() {
@@ -20,7 +20,7 @@ void task8part2() {
   final setTypeKnown = {'int', 'double', 'String', 'bool', 
                     'List', 'Set', 'Map', 'Null'};
     
-  var setTypeCore = setTypeKnown.map((t) => (t)).toSet();
+  var setTypeCore = setTypeKnown.toSet();
   setTypeCore.addAll({'Records', 'Function', 'Runes', 'Symbols'});
   
   print('Same types');
@@ -44,21 +44,16 @@ void task8part3() {
    mapCommand.addAll({'clear': 'очищає List'});
    mapCommand['add'] = 'розширює List додавши значення останнім в список';
     
-  final keys = mapCommand.keys.toList();
   String maxLengthCommand = '';
   String maxLengthKey = '';
-  for (var i=0; i<mapCommand.length-1; i++) {
-    String key = keys[i];
-    String value = mapCommand[keys[i]].toString();
+  mapCommand.forEach((key, value) {
     print('key: $key; value: $value');
-    for (var y=i; y==i; y++) {
-      print('key: $key; value: $value');
-    }
+    print('key: $key; value: $value');
     if (maxLengthCommand.length < value.length) {
       maxLengthCommand = value;
       maxLengthKey = key;
     }
-  }
+  });
   print('Команда: $maxLengthKey - має найбільший опис: $maxLengthCommand');
 }
 
